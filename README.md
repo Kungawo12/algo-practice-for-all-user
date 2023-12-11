@@ -1,0 +1,1 @@
+# these are the algorithms practices tha will help the beginner an the new students who are currently perusing their career on computer science and coding especially for python and javascript.
