@@ -96,12 +96,38 @@ def negatives_value(arr):
     for i in range(len(arr)):
         if arr[i]< 0:
             arr[i] = 0
-        else:
-            arr.append(arr[i])
-    return arr[i]
+    return arr
 
 print(negatives_value([1,5,10,-2]))
 # 11. Max/Min/Avg - Given an array with multiple values, write a function that returns a new array that only contains the maximum, minimum, and average values of the original array. (e.g. [1,5,10,-2] will return [10,-2,3.5])
+def maximum(arr):
+    max = 0
+    for i in range(len(arr)):
+        if max < arr[i]:
+            max = arr[i]
+
+    return max
+
+def minimum(arr):
+    min = 0
+    for i in range(len(arr)):
+        if min > arr[i]:
+            min = arr[i]
+    return min
+def average(arr):
+    sum = 0
+    for i in range(len(arr)):
+        sum += arr[i]
+    avg = sum / len(arr)
+    return avg
+
+def max_min_avg(arr):
+    max = maximum(arr)
+    min = minimum(arr)
+    avg = average(arr)
+    return [max, min,avg]
+
+print(max_min_avg([1,5,10,-2]))
 
 # 12. Swap Values - Write a function that will swap the first and last values of any given array. The default minimum length of the array is 2. (e.g. [1,5,10,-2] will become [-2,5,10,1])
 
