@@ -56,20 +56,20 @@ def Average(arr):
 print(Average([1,3,5,7,20]))
 
 # 7. Array odd - Write a function that would return an array of all the odd numbers between 1 to 50. (ex. [1,3,5, .... , 47,49]). Hint: Use 'push' method
-def Array_odd(list):
+def Array_odd():
     new_list = []
-    for i in range(len(list)):
-        if list[i] % 2 != 0:
-            new_list.append(list[i])
+    for i in range(1,50):
+        if i % 2 != 0:
+            new_list.append(i)
     return new_list
 
-def return_array():
-    arr = []
-    for i in range(1,50):
-        arr.append(i)
-    return arr
+# def return_array():
+#     arr = []
+#     for i in range(1,50):
+#         arr.append(i)
+#     return arr
 
-print(Array_odd(return_array()))
+print(Array_odd())
 
 # 8. Greater than Y - Given value of Y, write a function that takes an array and returns the number of values that are greater than Y. For example if arr = [1, 3, 5, 7] and Y = 3, your function will return 2. (There are two values in the array greater than 3, which are 5, 7)
 def greater_than(arr,y):
