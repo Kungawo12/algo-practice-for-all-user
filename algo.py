@@ -150,11 +150,37 @@ print(num_to_string([-1,-3,2]))
 
 
 # 14. Biggie Size - Given an array, write a function that changes all positive numbers in the array to the string "big".  Example: makeItBig([-1,3,5,-5]) returns that same array, changed to [-1, "big", "big", -5]
+def Biggie_size(list):
+    for i in range(len(list)):
+        if list[i] > 0:
+            list[i] = "big"
 
+    return list
+
+print(Biggie_size([-1,3,5,-5]))
 # 15. Print Low, Return High - Create a function that takes in an array of numbers.  The function should print the lowest value in the array, and return the highest value in the array
+def print_low_return_high(list):
+    lowest = float('inf')
+    highest = float('-inf')
+    for num in list:
+        if num < lowest:
+                lowest = num
+        if num > highest:
+            highest = num
+    print(lowest)
+    return highest
 
+print(print_low_return_high([1,2,3,4,5,9,-1,-8]))
 # 16. Print One, Return Another - Build a function that takes in an array of numbers.  The function should print the second-to-last value in the array, and return the first odd value in the array
+def one_another(list):
+    print(list[-2])
+    for num in list:
+        odd = 0
+        if num % 2 != 0:
+            odd += num
+        return num
 
+print(one_another([1,2,3,4,5,9,-1,-8]))
 # 17. Double Vision - Given an array (similar to saying 'takes in an array'), create a function that returns a new array where each value in the original array has been doubled.  Calling double([1,2,3]) should return [2,4,6] without changing the original array
 
 # 18. Count Positives - Given an array of numbers, create a function to replace the last value with the number of positive values found in the array.  Example, countPositives([-1,1,1,1]) changes the original array to [-1,1,1,3] and returns it
