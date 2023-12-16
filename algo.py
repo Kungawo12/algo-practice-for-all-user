@@ -201,7 +201,15 @@ def count_positives(list):
 print(count_positives([-1,1,1,1]))
 
 # 19. Evens and Odds - Create a function that accepts an array.  Every time that array has three odd values in a row, print "That's odd!".  Every time the array has three evens in a row, print "Even more so!"
+def even_odd(list):
+    for i,j,k in zip(list, list[1:], list[2:]):
+        if i % 2 == 0 and j % 2 == 0 and k % 2:
+            return "That's even!"
+        elif i % 2 == 1 and j % 2 == 1 and k % 2 ==1:
+            return "That's odd!"
+    return "whole number"
 
+print(even_odd([1,3,5,6,7,8]))
 # 20. Increment the Seconds - Given an array of numbers arr, add 1 to every other element, specifically those whose index is odd (arr[1], arr[3], arr[5], etc).  Afterward, console.log each array value and return arr
 
 # 21. Previous Lengths - You are passed an array (similar to saying 'takes in an array' or 'given an array') containing strings.  Working within that same array, replace each string with a number - the length of the string at the previous array index - and return the array.  For example, previousLengths(["hello", "dojo", "awesome"]) should return ["hello", 5, 4]. Hint: Can for loops only go forward?
