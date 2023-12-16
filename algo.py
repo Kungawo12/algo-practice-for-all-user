@@ -182,8 +182,23 @@ def one_another(list):
 
 print(one_another([1,2,3,4,5,9,-1,-8]))
 # 17. Double Vision - Given an array (similar to saying 'takes in an array'), create a function that returns a new array where each value in the original array has been doubled.  Calling double([1,2,3]) should return [2,4,6] without changing the original array
+def double_vision(list):
+    for i in range(len(list)):
+        list[i] = list[i] * list[i]
+    return list
+
+print(double_vision([1,2,3]))
 
 # 18. Count Positives - Given an array of numbers, create a function to replace the last value with the number of positive values found in the array.  Example, countPositives([-1,1,1,1]) changes the original array to [-1,1,1,3] and returns it
+def count_positives(list):
+    count = 0
+    for i in range(len(list)):
+        if list[i] > 0:
+            count += 1
+    list[-1] = count
+    return list
+
+print(count_positives([-1,1,1,1]))
 
 # 19. Evens and Odds - Create a function that accepts an array.  Every time that array has three odd values in a row, print "That's odd!".  Every time the array has three evens in a row, print "Even more so!"
 
