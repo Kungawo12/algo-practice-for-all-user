@@ -130,6 +130,7 @@ def max_min_avg(arr):
 print(max_min_avg([1,5,10,-2]))
 
 # 12. Swap Values - Write a function that will swap the first and last values of any given array. The default minimum length of the array is 2. (e.g. [1,5,10,-2] will become [-2,5,10,1])
+
 def swap_values(list):
         temp = list[0]
         list[0] = list[-1]
@@ -140,6 +141,7 @@ print(swap_values([1,5,10,-2]))
 
 
 # 13. Number to String - Write a function that takes an array of numbers and replaces any negative values within the array with the string 'Dojo'. For example if array = [-1,-3,2], your function will return ['Dojo','Dojo',2]
+
 def num_to_string(list):
     for i in range(len(list)):
         if list[i] < 0:
@@ -158,7 +160,9 @@ def Biggie_size(list):
     return list
 
 print(Biggie_size([-1,3,5,-5]))
+
 # 15. Print Low, Return High - Create a function that takes in an array of numbers.  The function should print the lowest value in the array, and return the highest value in the array
+
 def print_low_return_high(list):
     lowest = float('inf')
     highest = float('-inf')
@@ -172,6 +176,7 @@ def print_low_return_high(list):
 
 print(print_low_return_high([1,2,3,4,5,9,-1,-8]))
 # 16. Print One, Return Another - Build a function that takes in an array of numbers.  The function should print the second-to-last value in the array, and return the first odd value in the array
+
 def one_another(list):
     print(list[-2])
     for num in list:
@@ -182,6 +187,7 @@ def one_another(list):
 
 print(one_another([1,2,3,4,5,9,-1,-8]))
 # 17. Double Vision - Given an array (similar to saying 'takes in an array'), create a function that returns a new array where each value in the original array has been doubled.  Calling double([1,2,3]) should return [2,4,6] without changing the original array
+
 def double_vision(list):
     for i in range(len(list)):
         list[i] = list[i] * list[i]
@@ -190,6 +196,7 @@ def double_vision(list):
 print(double_vision([1,2,3]))
 
 # 18. Count Positives - Given an array of numbers, create a function to replace the last value with the number of positive values found in the array.  Example, countPositives([-1,1,1,1]) changes the original array to [-1,1,1,3] and returns it
+
 def count_positives(list):
     count = 0
     for i in range(len(list)):
@@ -201,6 +208,7 @@ def count_positives(list):
 print(count_positives([-1,1,1,1]))
 
 # 19. Evens and Odds - Create a function that accepts an array.  Every time that array has three odd values in a row, print "That's odd!".  Every time the array has three evens in a row, print "Even more so!"
+
 def even_odd(list):
     for i,j,k in zip(list, list[1:], list[2:]):
         if i % 2 == 0 and j % 2 == 0 and k % 2:
@@ -210,11 +218,46 @@ def even_odd(list):
     return "whole number"
 
 print(even_odd([1,3,5,6,7,8]))
+
 # 20. Increment the Seconds - Given an array of numbers arr, add 1 to every other element, specifically those whose index is odd (arr[1], arr[3], arr[5], etc).  Afterward, console.log each array value and return arr
+
+def increment_the_seconds(list):
+    for i in range(len(list)):
+        if i % 2 != 0:
+            list[i] = list[i] + 1
+    return list
+
+print(increment_the_seconds([1,3,5,6,7,8]))
 
 # 21. Previous Lengths - You are passed an array (similar to saying 'takes in an array' or 'given an array') containing strings.  Working within that same array, replace each string with a number - the length of the string at the previous array index - and return the array.  For example, previousLengths(["hello", "dojo", "awesome"]) should return ["hello", 5, 4]. Hint: Can for loops only go forward?
 
+#   Iterate from the second element (index 1) to the end of the array
+#     // Calculate the length of the string at the previous index (i - 1)
+
+#     // Replace the current string with its length
+
+def previous_lengths(list):
+    new_list = [list[0]]
+    for i in range(1,len(list)):
+        length_pre_strings = len(list[i - 1])
+        new_list.append(length_pre_strings)
+    return new_list
+
+print(previous_lengths(["hello", "dojo", "awesome"]))
+
+
+#   // Return the modified array
+
 # 22. Add Seven - Build a function that accepts an array. Return a new array with all the values of the original, but add 7 to each. Do not alter the original array.  Example, addSeven([1,2,3]) should return [8,9,10] in a new array
+
+def add_seven(list):
+    new_list = []
+    for num in list:
+        num += 7
+        new_list.append(num)
+    return new_list
+
+print(add_seven([1,2,3]))
 
 # 23. Reverse Array - Given an array, write a function that reverses its values, in-place.  Example: reverse([3,1,6,4,2]) returns the same array, but now contains values reversed like so... [2,4,6,1,3].  Do this without creating an empty temporary array.  (Hint: you'll need to swap values)
 
