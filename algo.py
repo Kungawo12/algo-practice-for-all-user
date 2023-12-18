@@ -260,11 +260,35 @@ def add_seven(list):
 print(add_seven([1,2,3]))
 
 # 23. Reverse Array - Given an array, write a function that reverses its values, in-place.  Example: reverse([3,1,6,4,2]) returns the same array, but now contains values reversed like so... [2,4,6,1,3].  Do this without creating an empty temporary array.  (Hint: you'll need to swap values)
+def reverse_arr(list):
+    new_list = list[::-1]
+    return new_list
+print(reverse_arr([3,1,6,4,2]))
 
 # 24. Outlook: Negative - Given an array, create and return a new one containing all the values of the original array, but make them all negative (negative values should remain negative). Given [1,-3,5], return [-1,-3,-5]
+def make_negative(list):
+    new_list = []
+    for i in range(len(list)):
+        if list[i]> 0:
+            list[i] = -abs(list[i])
+        else:
+            list[i] = list[i]
+        new_list.append(list[i])
+    return new_list
 
+print(make_negative([1,-3,5]))
 # 25. Always Hungry - Create a function that accepts an array, and prints "yummy" each time one of the values is equal to "food".  If no array values are "food", then print "I'm hungry" once
-
+def always_hungry(list):
+    for i in range(len(list)):
+        n_list = []
+        if list[i] == "food":
+            list[i] = "yummy"
+        else:
+            list[i] = "I'm hungry!"
+        n_list.append(list[i])
+    return list
+appetite_checking =always_hungry(["happy", "food", "swimming", "sleep", "happy","food"])
+print(appetite_checking)
 # 26. Swap Toward the Center - Given an array, swap the first and last values, third and third-to-last values, etc.  Example: swapTowardCenter([true,42,"Ada",2,"pizza"]) turns the array into ["pizza", 42, "Ada", 2, true].  swapTowardCenter([1,2,3,4,5,6]) turns the array into [6,2,4,3,5,1].  No need to return the array this time
 
 # 27. Scale the Array - Given an array arr and a number num, multiply all values in the array arr by the number num, and return the changed array arr.  For example, scaleArray([1,2,3], 3) should return [3,6,9]
