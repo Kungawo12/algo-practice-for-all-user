@@ -291,6 +291,30 @@ appetite_checking =always_hungry(["happy", "food", "swimming", "sleep", "happy",
 print(appetite_checking)
 # 26. Swap Toward the Center - Given an array, swap the first and last values, third and third-to-last values, etc.  Example: swapTowardCenter([true,42,"Ada",2,"pizza"]) turns the array into ["pizza", 42, "Ada", 2, true].  swapTowardCenter([1,2,3,4,5,6]) turns the array into [6,2,4,3,5,1].  No need to return the array this time
 
+def swap_towards_center(list):
+    mid_list = int(len(list) // 2)
+
+    for i in range(mid_list):
+        mid_index_shift = len(list) - 1 - i
+
+        temp = list[i]
+        list[i] = list[mid_index_shift]
+        list[mid_index_shift]= temp
+    return list
+
+print(swap_towards_center([True, 42,"Ada",2,"pizza"]))
+print(swap_towards_center([1,2,3,4,5,6]))
 # 27. Scale the Array - Given an array arr and a number num, multiply all values in the array arr by the number num, and return the changed array arr.  For example, scaleArray([1,2,3], 3) should return [3,6,9]
+
+def scale_array(list,y):
+    new_list = []
+    for i in list:
+        i  *=  y
+
+        new_list.append(i)
+
+    return new_list
+
+print(scale_array([1,2,3], 3))
 # algos.txt
 # 6 KB
