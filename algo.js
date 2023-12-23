@@ -82,11 +82,40 @@ function greater_than(arr, Y){
 }
 console.log(greater_than([1,3,5,7], 3))
 // 9. Squares - Given an array with multiple values, write a function that replaces each value in the array with the value squared by itself. (e.g. [1,5,10,-2] will become [1,25,100,4])
-
+function squares(arr){
+    for(i = 0; i < arr.length;i++){
+        arr[i] *= arr[i]
+    }
+    return arr
+}
+console.log(squares([1,5,10,-2]))
 // 10. Negatives - Given an array with multiple values, write a function that replaces any negative numbers within the array with the value of 0. When the program is done the array should contain no negative values. (e.g. [1,5,10,-2] will become [1,5,10,0])
-
+function negatives_to_zero(arr){
+    for (i = 0; i<arr.length; i++){
+        if(arr[i] < 0){
+            arr[i] = 0        }
+    }
+    return arr
+}
+console.log(negatives_to_zero([1,5,10,-2]))
 // 11. Max/Min/Avg - Given an array with multiple values, write a function that returns a new array that only contains the maximum, minimum, and average values of the original array. (e.g. [1,5,10,-2] will return [10,-2,3.5])
-
+function max_min_avg(arr){
+    max = 0
+    min = 0
+    sum = 0
+    for(i=0; i < arr.length; i++){
+        sum += arr[i]
+        if(arr[i]> max){
+            max = arr[i]
+        }
+        if(arr[i] < min){
+            min = arr[i]
+        }
+        avg = sum/arr.length
+    }
+    return [max, min, avg]
+}
+console.log(max_min_avg([1,5,10,-2]))
 // 12. Swap Values - Write a function that will swap the first and last values of any given array. The default minimum length of the array is 2. (e.g. [1,5,10,-2] will become [-2,5,10,1])
 
 // 13. Number to String - Write a function that takes an array of numbers and replaces any negative values within the array with the string 'Dojo'. For example if array = [-1,-3,2], your function will return ['Dojo','Dojo',2]
