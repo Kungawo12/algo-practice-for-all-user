@@ -318,3 +318,16 @@ def scale_array(list,y):
 print(scale_array([1,2,3], 3))
 # algos.txt
 # 6 KB
+
+# PushFront
+# Given an array and an additional value, insert value at the beginning of the array.
+# Do this without using an built-in array methods.
+def push_front(arr, value):
+    arr.append(0)
+    for i in range(len(arr)-1, -1, -1):
+            arr[i] = arr[i-1]
+    arr[0] = value
+    return arr
+
+print(push_front([1,2,3,4,5],7))
+        

@@ -140,6 +140,7 @@ console.log(max_min_avg([1,5,10,-2]))
 
 // 23. Reverse Array - Given an array, write a function that reverses its values, in-place.  Example: reverse([3,1,6,4,2]) returns the same array, but now contains values reversed like so... [2,4,6,1,3].  Do this without creating an empty temporary array.  (Hint: you'll need to swap values)
 
+
 // 24. Outlook: Negative - Given an array, create and return a new one containing all the values of the original array, but make them all negative (negative values should remain negative). Given [1,-3,5], return [-1,-3,-5]
 
 // 25. Always Hungry - Create a function that accepts an array, and prints "yummy" each time one of the values is equal to "food".  If no array values are "food", then print "I'm hungry" once
@@ -149,3 +150,22 @@ console.log(max_min_avg([1,5,10,-2]))
 // 27. Scale the Array - Given an array arr and a number num, multiply all values in the array arr by the number num, and return the changed array arr.  For example, scaleArray([1,2,3], 3) should return [3,6,9]
 // algos.txt
 // 6 KB
+
+// PushFront
+// Given an array and an additional value, insert value at the beginning of the array.
+// Do this without using an built-in array methods.
+
+// create a function that accept an array and a value
+function pushFront(array, value){
+    // iterate through the array
+    for(var i=array.length; i >0; i--){
+    // shift the values
+        array[i] = array[i-1]
+    }
+// insert the given value at the beginning of the array
+    array[0] = value
+    return array
+}
+
+// return the array
+console.log(pushFront([1,2,3,4,5],7))
